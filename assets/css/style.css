@@ -132,3 +132,14 @@ body{
 .message_box {
     background-image: url("../img/mine.jpg");
 }
+
+.bottom_bar i{
+    color:#6D767A;
+}
+
+input {
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+}
