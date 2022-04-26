@@ -17,6 +17,7 @@ h6, p {
 }
 
 body{
+    /* font-family: Helvetica, Arial, sans-serif; */
     background-color: #D8DBD6;
     margin: 2rem auto;
 }
@@ -126,4 +127,8 @@ body{
 
 .right_side .chat_box{
     height: calc(90vh - 100px);
+}
+
+.chat_box {
+    background-image: url("../img/mine.jpg");
 }
