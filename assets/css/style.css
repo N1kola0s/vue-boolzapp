@@ -125,10 +125,10 @@ body{
 }
 
 
-.right_side .chat_box{
+.right_side .message_box{
     height: calc(90vh - 100px);
 }
 
-.chat_box {
+.message_box {
     background-image: url("../img/mine.jpg");
 }
