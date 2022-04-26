@@ -143,3 +143,26 @@ input {
     font-size: 14px;
     border-radius: 3px;
 }
+
+.user_message{
+    background-color: #D5F9BA;
+    margin-bottom: 2rem;
+    padding: 0.875rem;
+    border-radius: 10px;
+    position:relative;
+}
+
+.friend_message{
+    background-color: white;
+    padding: 0.875rem;
+    border-radius: 10px;
+    position:relative;
+}
+
+.message_time{
+    position:absolute;
+    bottom:5px;
+    right:10px;
+    font-size: 10px;
+    color:gray;
+}
