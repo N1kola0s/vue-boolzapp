@@ -110,6 +110,12 @@ body{
 }
 
 
+.search button{
+    background-color: white;
+    border: none;
+    color: #EAEAEA;
+}
+
 .contacts .box{
     border-bottom: 1px solid #EAEAEA;
 }
@@ -142,6 +148,7 @@ input {
     padding: 6px 10px;
     font-size: 14px;
     border-radius: 3px;
+    color:#EAEAEA
 }
 
 .user_message{
