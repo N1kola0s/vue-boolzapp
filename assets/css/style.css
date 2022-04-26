@@ -165,19 +165,22 @@ input {
 }
 
 
-.user_message{
-    background-color: #D5F9BA;
+.message {
     margin-bottom: 2rem;
     padding: 0.875rem;
     border-radius: 10px;
     position:relative;
+
+}
+.user_message{
+    background-color: #D5F9BA;
+    
+   
 }
 
 .friend_message{
     background-color: white;
-    padding: 0.875rem;
-    border-radius: 10px;
-    position:relative;
+    
 }
 
 .message_time{
