@@ -89,6 +89,7 @@ body{
 
 .notification.box{
     background-color:#8EDAFC;
+    height: 90px;
 }
 
 
@@ -110,6 +111,10 @@ body{
 }
 
 
+.search {
+    height: 60px;
+}
+
 .search button{
     background-color: white;
     border: none;
@@ -118,6 +123,13 @@ body{
 
 .contacts .box{
     border-bottom: 1px solid #EAEAEA;
+}
+
+
+
+section.contacts{
+    overflow: auto;
+    height: calc(90vh - 200px);
 }
 
 .contacts.icon>img{
@@ -132,8 +144,9 @@ body{
 
 
 .right_side .message_box{
-    height: calc(90vh - 100px);
+    height: calc(90vh - 95px );
 }
+
 
 .message_box {
     background-image: url("../img/mine.jpg");
@@ -150,6 +163,7 @@ input {
     border-radius: 3px;
     color:#EAEAEA
 }
+
 
 .user_message{
     background-color: #D5F9BA;

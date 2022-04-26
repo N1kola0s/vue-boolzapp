@@ -65,13 +65,13 @@
                         <!-- /.search -->
     
                         <section class="contacts">
-                            <div class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3">
+                            <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)">
                                 <div class="d-flex flex-columns">
                                     <div class="contacts icon">
-                                        <img src="./assets/img/avatar_1.jpg" alt="user_name">
+                                        <img :src="contact.avatar" alt="user_name">
                                     </div>
                                     <div class="text_info mx-2">
-                                        <h6>Michele</h6>
+                                        <h6>{{contact.name}}</h6>
                                         <p>Ultimo messaggio inviato</p>
                                     </div>
     
@@ -82,132 +82,6 @@
                                 </div>
                                 
                             </div>
-    
-                            <div class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3">
-                                <div class="d-flex flex-columns">
-                                    <div class="contacts icon">
-                                        <img src="./assets/img/avatar_2.jpg" alt="user_name">
-                                    </div>
-                                    <div class="text_info mx-2">
-                                        <h6>Fabio</h6>
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
-    
-                                </div>
-                               
-                                <div class="time">
-                                    12:00
-                                </div>
-                                
-                            </div>
-    
-                            <div class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3">
-                                <div class="d-flex flex-columns">
-                                    <div class="contacts icon">
-                                        <img src="./assets/img/avatar_3.jpg" alt="user_name">
-                                    </div>
-                                    <div class="text_info mx-2">
-                                        <h6>Samuele</h6>
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
-    
-                                </div>
-                               
-                                <div class="time">
-                                    12:00
-                                </div>
-                                
-                            </div>
-    
-                            <div class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3">
-                                <div class="d-flex flex-columns">
-                                    <div class="contacts icon">
-                                        <img src="./assets/img/avatar_4.jpg" alt="user_name">
-                                    </div>
-                                    <div class="text_info mx-2">
-                                        <h6>Alessandro B.</h6>
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
-    
-                                </div>
-                               
-                                <div class="time">
-                                    12:00
-                                </div>
-                                
-                            </div>
-    
-                            <div class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3">
-                                <div class="d-flex flex-columns">
-                                    <div class="contacts icon">
-                                        <img src="./assets/img/avatar_5.jpg" alt="user_name">
-                                    </div>
-                                    <div class="text_info mx-2">
-                                        <h6>Alessandro L.</h6>
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
-    
-                                </div>
-                               
-                                <div class="time">
-                                    12:00
-                                </div>
-                                
-                            </div>
-    
-                            <div class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3">
-                                <div class="d-flex flex-columns">
-                                    <div class="contacts icon">
-                                        <img src="./assets/img/avatar_6.jpg" alt="user_name">
-                                    </div>
-                                    <div class="text_info mx-2">
-                                        <h6>Claudia</h6>
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
-    
-                                </div>
-                               
-                                <div class="time">
-                                    12:00
-                                </div>
-                                
-                            </div>
-    
-                            <div class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3">
-                                <div class="d-flex flex-columns">
-                                    <div class="contacts icon">
-                                        <img src="./assets/img/avatar_7.jpg" alt="user_name">
-                                    </div>
-                                    <div class="text_info mx-2">
-                                        <h6>Federico</h6>
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
-    
-                                </div>
-                               
-                                <div class="time">
-                                    12:00
-                                </div>
-                                
-                            </div>
-    
-                            <div class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3">
-                                <div class="d-flex flex-columns">
-                                    <div class="contacts icon">
-                                        <img src="./assets/img/avatar_8.jpg" alt="user_name">
-                                    </div>
-                                    <div class="text_info mx-2">
-                                        <h6>Davide</h6>
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
-    
-                                </div>
-                               
-                                <div class="time">
-                                    12:00
-                                </div>
-                                
-                            </div>                        
     
                         </section>
                         <!-- /.contacts -->
@@ -225,10 +99,10 @@
     
                                 <div class="d-flex flex-columns">
                                     <div class="user_icon">
-                                        <img src="./assets/img/avatar_1.jpg" alt="user_name">
+                                        <img :src="contacts[active].avatar" alt="user_name">
                                     </div>
                                     <div class="text_info mx-2">
-                                        <h6>Michele</h6>
+                                        <h6>{{contacts[active].name}}</h6>
                                         <p>Ultimo accesso oggi alle 12:00</p>
                                     </div>
                                 </div>
@@ -242,7 +116,7 @@
                             </div>
                             <!-- /.top_bar -->
         
-                            <div class="message_box p-5">
+                            <div class="message_box p-5" >
 
                                 <div class="user_message d-flex">
                                     Hai portato a spasso il cane?
@@ -309,11 +183,6 @@
         <!-- /#site_main -->
 
     </div>
-
-    
-
-    
-
 
 
     <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script>

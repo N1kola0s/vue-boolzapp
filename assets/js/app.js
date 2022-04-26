@@ -12,6 +12,7 @@ const app = new Vue (
         
         
         data:{
+            active: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -175,7 +176,17 @@ const app = new Vue (
                     ],
                 }
             ]
+        },
+        
+        methods: {
+            chat_selected(index){
+                
+                this.active = index;
+                console.log(index);
+            }
         }
+        
+
 
     }
 )
