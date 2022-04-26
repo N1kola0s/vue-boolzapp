@@ -9,8 +9,13 @@ img{
     width: 100%;
 }
 
+
 body{
     background-color: #D8DBD6;
+}
+
+.row>*{
+    padding:0;
 }
 
 
@@ -19,11 +24,6 @@ body{
     height: 662px;
     margin:1rem auto;
 
-}
-
-
-.row>*{
-    padding:0;
 }
 
 .left_side{
@@ -49,19 +49,21 @@ body{
 }
 
 
-.left_side i {
+.left_side i,
+.right_side i {
     padding: 0 5px;
 }
 
 
-.left_side .el_icons{
+.left_side .el_icons,
+.right_side .el_icons{
     margin: 0 1rem;
     color:#B1B1B1;
 }
 
 .user_icon{
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     margin: 0 0.5rem;
 }
 
