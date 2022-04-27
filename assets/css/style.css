@@ -21,9 +21,10 @@ body{
     /* background-color: #D8DBD6; */
     overflow: hidden;
     background-image: linear-gradient(to bottom, #009688 0px, #009688 160px, #d8dbd6 160px, #d8dbd6 100%);
-    margin: 3rem auto;
+    margin: 2rem auto 4rem;
     
 }
+
 
 .row>*{
     padding:0;
@@ -35,6 +36,7 @@ body{
 .container{
     height: 100%;
     box-shadow:5px 8px 8px #88888859;
+    
 }
 
 #app {
@@ -179,29 +181,30 @@ input {
 
 
 .message {
-    
+    width: fit-content;
     position:relative;
 }
+
 .sent_message{
     border-radius: 10px;
     background-color: #D5F9BA;
-    margin-bottom: 2rem;
-    padding: 0.875rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
 
 }
 
 .received_message{
+    
     border-radius: 10px;
     background-color: white;
-    margin-bottom: 2rem;
-    padding: 0.875rem;
-    
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
 
 .message_time{
     position:absolute;
-    bottom:5px;
-    right:10px;
+    bottom:2px;
+    right:8px;
     font-size: 10px;
     color:gray;
 }

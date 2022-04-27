@@ -158,7 +158,7 @@
                                 </div>
                                 <!-- /.el_icons -->
     
-                                <input class="w-100" type="text" placeholder="Scrivi un messaggio">
+                                <input v-model="textMyMessage" @keyup.enter="sendMyMessage" class="w-100 text-black" type="text" placeholder="Scrivi un messaggio">
     
                                 <div class="el_icons">
                                     <i class="fa-solid fa-microphone"></i>

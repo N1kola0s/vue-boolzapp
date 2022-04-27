@@ -4,13 +4,22 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 
 Milestone 2
 Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-Click sul contatto mostra la conversazione del contatto cliccato */
+Click sul contatto mostra la conversazione del contatto cliccato
+
+Milestone 3
+● Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando
+“enter” il testo viene aggiunto al thread sopra, come messaggio verde
+● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
+un “ok” come risposta, che apparirà dopo 1 secondo.
+
+*/
 
 const app = new Vue (
     {
         el:"#app", 
         data:{
             active: 0,
+            textMyMessage:'',
             contacts: [
                 {
                     name: 'Michele',
@@ -181,9 +190,37 @@ const app = new Vue (
                 
                 this.active = index;
                 console.log(index);
+            },
+
+            sendMyMessage(){
+                console.log('enter click')
+
+                //dichiaro una variabile che inizializzo con il nuovo oggetto
+
+                const newMessage = {
+                    date: '27/04/2022 13:57:00',
+                    message: this.textMyMessage,
+                    status: 'sent'
+
+                }
+
+                //imposto una condizione nel caso l'input sia una stringa vuota non deve essere pushato all'enter click
+
+                if(this.textMyMessage != ''){
+
+                    //pusho l'oggetto con il nuovo messaggio nell'array messages
+                    this.contacts[this.active].messages.push(newMessage);
+
+                    //faccio il clear dell'input
+                    this.textMyMessage =''
+
+                }
+
             }
 
         }
+
+
         
     }
 )
