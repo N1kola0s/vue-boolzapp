@@ -20,8 +20,8 @@ body{
     /* font-family: Helvetica, Arial, sans-serif; */
     /* background-color: #D8DBD6; */
     overflow: hidden;
-    background-image: linear-gradient(to bottom, #009688 0px, #009688 160px, #d8dbd6 160px, #d8dbd6 100%);
-    margin: 2rem auto 4rem;
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 130px, #d8dbd6 130px, #d8dbd6 100%);
+    margin: 2vh auto 8vh;
     
 }
 
@@ -36,7 +36,6 @@ body{
 .container{
     height: 100%;
     box-shadow:5px 8px 8px #88888859;
-    
 }
 
 #app {
