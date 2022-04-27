@@ -20,7 +20,7 @@ body{
     /* font-family: Helvetica, Arial, sans-serif; */
     /* background-color: #D8DBD6; */
     overflow: hidden;
-    background-image: linear-gradient(to bottom, #009688 0px, #009688 140px, #d8dbd6 140px, #d8dbd6 100%);
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 160px, #d8dbd6 160px, #d8dbd6 100%);
     margin: 3rem auto;
     
 }
