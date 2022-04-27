@@ -33,11 +33,15 @@ body{
 
 
 .container{
-    height: 90vh;
+    height: 100%;
+    box-shadow:5px 8px 8px #88888859;
 }
 
 #app {
+    height: 90vh;
     cursor:pointer;
+    z-index:1;
+
 }
 
 .left_side{
