@@ -65,7 +65,7 @@
                         <!-- /.search -->
     
                         <section class="contacts">
-                            <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)">
+                            <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)" :class="index === active ? 'active' : ''">
                                 <div class="d-flex flex-columns">
                                     <div class="contacts icon">
                                         <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="user_name">
@@ -131,19 +131,19 @@
         
                             <div class="message_box p-5" >
 
-                                <div class="message" v-for="(contact,index) in contacts[active].messages">
+                                <div class="message w-100 d-flex flex-column" v-for="(contact,index) in contacts[active].messages">
                                     
                                     
-                                    <div class="text_message" :class="contact.status == 'sent' ? 'sent_message' : 'received_message'">
+                                    <div class="text_message col-5" :class="contact.status == 'sent' ? 'sent_message' : 'received_message'">
                                         {{contact.message}}
 
-                                    </div>
+                                        <div class="message_time">
+                                            {{contact.date.slice(10,16)}}
+    
+                                        </div>
+                                        <!-- /.message:time -->
 
-                                    <div class="message_time">
-                                        {{contact.date.slice(10,16)}}
-
                                     </div>
-                                    <!-- /.message:time -->
 
                                 </div>
                                 <!-- /.message -->

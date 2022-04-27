@@ -182,7 +182,7 @@ input {
 
 .message {
     width: fit-content;
-    position:relative;
+    /* position:relative; */
 }
 
 .sent_message{
@@ -190,6 +190,8 @@ input {
     background-color: #D5F9BA;
     margin-bottom: 1rem;
     padding: 1rem;
+    align-self: flex-end;
+    position:relative;
 
 }
 
@@ -199,12 +201,19 @@ input {
     background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
+    align-self: flex-start;
+    position:relative;
 }
 
 .message_time{
     position:absolute;
-    bottom:2px;
-    right:8px;
     font-size: 10px;
     color:gray;
+    bottom:2px;
+    right: 8px;
+}
+
+.active {
+    background-color: #d8dbd6;
+
 }
