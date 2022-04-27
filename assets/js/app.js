@@ -216,8 +216,30 @@ const app = new Vue (
 
                 }
 
+                /* this.receivedBotMessage() */
+
+                //imposto il metodo affinchè mi restituisca la risposta della funzione richiamata dopo che sia passato 1 sec
+                setTimeout(this.receivedBotMessage, 1000);
+
+            },
+
+            //funzione che mi restituisce una risposta automatica settata su 'ok'
+            receivedBotMessage(){
+
+                const botMessage = {
+                    date: '27/04/2022 13:57:00',
+                    message: 'ok',
+                    status: 'received'
+
+                }
+
+
+                this.contacts[this.active].messages.push(botMessage);
+
+
             }
 
+            
         }
 
 
