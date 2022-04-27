@@ -18,9 +18,11 @@ h6, p {
 
 body{
     /* font-family: Helvetica, Arial, sans-serif; */
-    background-color: #D8DBD6;
-    margin: 2rem auto;
-    cursor:pointer;
+    /* background-color: #D8DBD6; */
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 140px, #d8dbd6 140px, #d8dbd6 100%);
+    margin: 3rem auto;
+    
 }
 
 .row>*{
@@ -32,6 +34,10 @@ body{
 
 .container{
     height: 90vh;
+}
+
+#app {
+    cursor:pointer;
 }
 
 .left_side{
