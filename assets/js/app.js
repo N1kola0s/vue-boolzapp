@@ -8,15 +8,13 @@ Click sul contatto mostra la conversazione del contatto cliccato */
 
 const app = new Vue (
     {
-        el:"#app",
-        
-        
+        el:"#app", 
         data:{
             active: 0,
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: '_1.jpg',
+                    avatar: '_1',
                     visible: true,
                     messages: [
                         {
@@ -38,7 +36,7 @@ const app = new Vue (
                 },
                 {
                     name: 'Fabio',
-                    avatar: '_2.jpg',
+                    avatar: '_2',
                     visible: true,
                     messages: [
                         {
@@ -60,7 +58,7 @@ const app = new Vue (
                 },
                 {
                     name: 'Samuele',
-                    avatar: '_3.jpg',
+                    avatar: '_3',
                     visible: true,
                     messages: [
                         {
@@ -82,7 +80,7 @@ const app = new Vue (
                 },
                 {
                     name: 'Alessandro B.',
-                    avatar: '_4.jpg',
+                    avatar: '_4',
                     visible: true,
                     messages: [
                         {
@@ -99,7 +97,7 @@ const app = new Vue (
                 },
                 {
                     name: 'Alessandro L.',
-                    avatar: '_5.jpg',
+                    avatar: '_5',
                     visible: true,
                     messages: [
                         {
@@ -116,7 +114,7 @@ const app = new Vue (
                 },
                 {
                     name: 'Claudia',
-                    avatar: '_6.jpg',
+                    avatar: '_6',
                     visible: true,
                     messages: [
                         {
@@ -138,7 +136,7 @@ const app = new Vue (
                 },
                 {
                     name: 'Federico',
-                    avatar: '_7.jpg',
+                    avatar: '_7',
                     visible: true,
                     messages: [
                         {
@@ -155,7 +153,7 @@ const app = new Vue (
                 },
                 {
                     name: 'Davide',
-                    avatar: '_8.jpg',
+                    avatar: '_8',
                     visible: true,
                     messages: [
                         {
@@ -187,7 +185,5 @@ const app = new Vue (
 
         }
         
-
-
     }
 )

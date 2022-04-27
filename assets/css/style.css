@@ -154,6 +154,7 @@ section.contacts{
     background-image: url("../img/mine.jpg");
 }
 
+
 .bottom_bar i{
     color:#6D767A;
 }
@@ -176,6 +177,7 @@ input {
     background-color: #D5F9BA;
     margin-bottom: 2rem;
     padding: 0.875rem;
+
 }
 
 .received_message{

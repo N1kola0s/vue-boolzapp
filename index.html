@@ -67,8 +67,8 @@
                         <section class="contacts">
                             <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)">
                                 <div class="d-flex flex-columns">
-                                    <div class="contact icon">
-                                        <img :src="`./assets/img/avatar${contact.avatar}`" alt="user_name">
+                                    <div class="contacts icon">
+                                        <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="user_name">
                                     </div>
                                     <!-- /.contacts icon -->
                                     <div class="text_info mx-2">
@@ -109,7 +109,7 @@
     
                                 <div class="d-flex flex-columns">
                                     <div class="user_icon">
-                                        <img :src="`./assets/img/avatar${contacts[active].avatar}`" alt="user_name">
+                                        <img :src="'./assets/img/avatar' + contacts[active].avatar + '.jpg'" alt="user_name">
                                     </div>
                                     <!-- /.user_icon -->
                                     <div class="text_info mx-2">
@@ -132,6 +132,7 @@
                             <div class="message_box p-5" >
 
                                 <div class="message" v-for="(contact,index) in contacts[active].messages">
+                                    
                                     
                                     <div class="text_message" :class="contact.status == 'sent' ? 'sent_message' : 'received_message'">
                                         {{contact.message}}
