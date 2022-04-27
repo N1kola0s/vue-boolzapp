@@ -67,19 +67,29 @@
                         <section class="contacts">
                             <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)">
                                 <div class="d-flex flex-columns">
-                                    <div class="contacts icon">
-                                        <img :src="contact.avatar" alt="user_name">
+                                    <div class="contact icon">
+                                        <img :src="`./assets/img/avatar${contact.avatar}`" alt="user_name">
                                     </div>
+                                    <!-- /.contacts icon -->
                                     <div class="text_info mx-2">
                                         <h6>{{contact.name}}</h6>
                                         <p>Ultimo messaggio inviato</p>
                                     </div>
+                                    <!-- /.text_info -->
     
                                 </div>
                                
-                                <div class="time">
+                                <div class="time" >
+
+                                    <!-- v-for="(contact,index) in contacts[active].messages" -->
+
+                                    <!-- {{contact.date.slice(10,16)}} -->
+
                                     12:00
+                                    
+                                    
                                 </div>
+                                <!-- /.time -->
                                 
                             </div>
     
@@ -99,12 +109,14 @@
     
                                 <div class="d-flex flex-columns">
                                     <div class="user_icon">
-                                        <img :src="contacts[active].avatar" alt="user_name">
+                                        <img :src="`./assets/img/avatar${contacts[active].avatar}`" alt="user_name">
                                     </div>
+                                    <!-- /.user_icon -->
                                     <div class="text_info mx-2">
                                         <h6>{{contacts[active].name}}</h6>
                                         <p>Ultimo accesso oggi alle 12:00</p>
                                     </div>
+                                    <!-- /.text_info -->
                                 </div>
         
                                 <div class="el_icons">
@@ -112,43 +124,29 @@
                                     <i class="fa-solid fa-paperclip"></i>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </div>
+                                <!-- /.el_icons -->
         
                             </div>
                             <!-- /.top_bar -->
         
                             <div class="message_box p-5" >
 
-                                <div class="message user_message d-flex">
-                                    Hai portato a spasso il cane?
-
-                                    <div class="message_time">
-                                        15:30
-
-                                    </div>
-
-                                </div>
-
-                                <div class="message user_message">
-                                    Ricordati di stendere i panni
-
-                                    <div class="message_time">
-                                        15:50
-
-                                    </div>
-                                
-                                </div>
-                                
-
-                                <div class="message friend_message">
-                                    Tutto fatto!
-
-                                    <div class="message_time">
-                                        15:50
-
-                                    </div>
+                                <div class="message" v-for="(contact,index) in contacts[active].messages">
                                     
+                                    <div class="text_message" :class="contact.status == 'sent' ? 'sent_message' : 'received_message'">
+                                        {{contact.message}}
+
+                                    </div>
+
+                                    <div class="message_time">
+                                        {{contact.date.slice(10,16)}}
+
+                                    </div>
+                                    <!-- /.message:time -->
+
                                 </div>
-        
+                                <!-- /.message -->
+
                             </div>
                             <!-- /.message_box -->
         
@@ -157,21 +155,21 @@
                                 <div class="el_icons">
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
+                                <!-- /.el_icons -->
     
                                 <input class="w-100" type="text" placeholder="Scrivi un messaggio">
     
                                 <div class="el_icons">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
+                                <!-- el_icons -->
     
-                                
                             </div>
                             <!-- /.bottom_bar -->
     
                         </div>
                         <!-- /.chat -->
-                        
-    
+                    
                     </div>
                     <!-- /.col-8 -->
                 </div>

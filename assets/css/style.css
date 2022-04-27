@@ -20,6 +20,7 @@ body{
     /* font-family: Helvetica, Arial, sans-serif; */
     background-color: #D8DBD6;
     margin: 2rem auto;
+    cursor:pointer;
 }
 
 .row>*{
@@ -41,7 +42,7 @@ body{
 
 .top_bar,
 .bottom_bar {  
-    height: 50px;
+    height: 66px;
     width: 100%;
     background-color: #EAEAEA;
 }
@@ -128,7 +129,7 @@ body{
 
 
 section.contacts{
-    overflow: auto;
+    overflow-y: scroll;
     height: calc(90vh - 200px);
 }
 
@@ -144,7 +145,8 @@ section.contacts{
 
 
 .right_side .message_box{
-    height: calc(90vh - 95px );
+    height: calc(90vh - 100px );
+    overflow-y: scroll;
 }
 
 
@@ -166,20 +168,21 @@ input {
 
 
 .message {
+    
+    position:relative;
+}
+.sent_message{
+    border-radius: 10px;
+    background-color: #D5F9BA;
     margin-bottom: 2rem;
     padding: 0.875rem;
+}
+
+.received_message{
     border-radius: 10px;
-    position:relative;
-
-}
-.user_message{
-    background-color: #D5F9BA;
-    
-   
-}
-
-.friend_message{
     background-color: white;
+    margin-bottom: 2rem;
+    padding: 0.875rem;
     
 }
 
