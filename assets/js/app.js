@@ -21,250 +21,246 @@ Milestone 5 - opzionale
 
 */
 
-const app = new Vue (
-    {
-        el:"#app", 
-        data:{
-            active: 0,
-            textMyMessage:'',
-            searchFilter:'',
-            contacts: [
-                {
-                    name: 'Michele',
-                    avatar: '_1',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Hai portato a spasso il cane?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Ricordati di stendere i panni',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 16:15:22',
-                            message: 'Tutto fatto!',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Fabio',
-                    avatar: '_2',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '20/03/2020 16:30:00',
-                            message: 'Ciao come stai?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '20/03/2020 16:30:55',
-                            message: 'Bene grazie! Stasera ci vediamo?',
-                            status: 'received'
-                        },
-                        {
-                            date: '20/03/2020 16:35:00',
-                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'sent'
-                        }
-                    ],
-                },
-                {
-                    name: 'Samuele',
-                    avatar: '_3',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '28/03/2020 10:10:40',
-                            message: 'La Marianna va in campagna',
-                            status: 'received'
-                        },
-                        {
-                            date: '28/03/2020 10:20:10',
-                            message: 'Sicuro di non aver sbagliato chat?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '28/03/2020 16:15:22',
-                            message: 'Ah scusa!',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Alessandro B.',
-                    avatar: '_4',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Lo sai che ha aperto una nuova pizzeria?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Si, ma preferirei andare al cinema',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Alessandro L.',
-                    avatar: '_5',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ricordati di chiamare la nonna',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Va bene, stasera la sento',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Claudia',
-                    avatar: '_6',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ciao Claudia, hai novità?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Non ancora',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:51:00',
-                            message: 'Nessuna nuova, buona nuova',
-                            status: 'sent'
-                        }
-                    ],
-                },
-                {
-                    name: 'Federico',
-                    avatar: '_7',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Fai gli auguri a Martina che è il suo compleanno!',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Grazie per avermelo ricordato, le scrivo subito!',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Davide',
-                    avatar: '_8',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:51:00',
-                            message: 'OK!!',
-                            status: 'received'
-                        }
-                    ],
-                }
-            ]
+const app = new Vue({
+    el: "#app",
+    data: {
+        active: 0,
+        textMyMessage: '',
+        searchFilter: '',
+        contacts: [{
+                name: 'Michele',
+                avatar: '_1',
+                visible: true,
+                messages: [{
+                        date: '10/01/2020 15:30:55',
+                        message: 'Hai portato a spasso il cane?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ricordati di stendere i panni',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        message: 'Tutto fatto!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Fabio',
+                avatar: '_2',
+                visible: true,
+                messages: [{
+                        date: '20/03/2020 16:30:00',
+                        message: 'Ciao come stai?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '20/03/2020 16:30:55',
+                        message: 'Bene grazie! Stasera ci vediamo?',
+                        status: 'received'
+                    },
+                    {
+                        date: '20/03/2020 16:35:00',
+                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        status: 'sent'
+                    }
+                ],
+            },
+            {
+                name: 'Samuele',
+                avatar: '_3',
+                visible: true,
+                messages: [{
+                        date: '28/03/2020 10:10:40',
+                        message: 'La Marianna va in campagna',
+                        status: 'received'
+                    },
+                    {
+                        date: '28/03/2020 10:20:10',
+                        message: 'Sicuro di non aver sbagliato chat?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '28/03/2020 16:15:22',
+                        message: 'Ah scusa!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Alessandro B.',
+                avatar: '_4',
+                visible: true,
+                messages: [{
+                        date: '10/01/2020 15:30:55',
+                        message: 'Lo sai che ha aperto una nuova pizzeria?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Si, ma preferirei andare al cinema',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Alessandro L.',
+                avatar: '_5',
+                visible: true,
+                messages: [{
+                        date: '10/01/2020 15:30:55',
+                        message: 'Ricordati di chiamare la nonna',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Va bene, stasera la sento',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Claudia',
+                avatar: '_6',
+                visible: true,
+                messages: [{
+                        date: '10/01/2020 15:30:55',
+                        message: 'Ciao Claudia, hai novità?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Non ancora',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 15:51:00',
+                        message: 'Nessuna nuova, buona nuova',
+                        status: 'sent'
+                    }
+                ],
+            },
+            {
+                name: 'Federico',
+                avatar: '_7',
+                visible: true,
+                messages: [{
+                        date: '10/01/2020 15:30:55',
+                        message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Davide',
+                avatar: '_8',
+                visible: true,
+                messages: [{
+                        date: '10/01/2020 15:30:55',
+                        message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                        status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:51:00',
+                        message: 'OK!!',
+                        status: 'received'
+                    }
+                ],
+            }
+        ]
+    },
+
+    methods: {
+
+        //imposto una funzione con parametro index che prenda l'elemento nella posizione active corrispondente e ne attribuisca il valore come index
+        chat_selected(index) {
+
+            this.active = index;
+            console.log(index);
         },
-        
-        methods: {
 
-            //imposto una funzione con parametro index che prenda l'elemento nella posizione active corrispondente e ne attribuisca il valore come index
-            chat_selected(index){
-                
-                this.active = index;
-                console.log(index);
-            },
+        sendMyMessage() {
+            console.log('enter click')
 
-            sendMyMessage(){
-                console.log('enter click')
+            //dichiaro una variabile che inizializzo con il nuovo oggetto
 
-                //dichiaro una variabile che inizializzo con il nuovo oggetto
-
-                const newMessage = {
-                    date: '27/04/2022 13:57:00',
-                    message: this.textMyMessage,
-                    status: 'sent'
-
-                }
-
-                //imposto una condizione nel caso l'input sia una stringa vuota non deve essere pushato all'enter click
-
-                if(this.textMyMessage != ''){
-
-                    //pusho l'oggetto con il nuovo messaggio nell'array messages
-                    this.contacts[this.active].messages.push(newMessage);
-
-                    //faccio il clear dell'input
-                    this.textMyMessage =''
-
-                }
-
-                /* this.receivedBotMessage() */
-
-                //imposto il metodo affinchè mi restituisca la risposta della funzione richiamata dopo che sia passato 1 sec
-                setTimeout(this.receivedBotMessage, 1000);
-
-            },
-
-            //funzione che mi restituisce una risposta automatica settata su 'ok'
-            receivedBotMessage(){
-
-                const botMessage = {
-                    date: '27/04/2022 13:57:00',
-                    message: 'ok',
-                    status: 'received'
-
-                }
-
-                //pusho l'oggetto con il messaggio automatico di risposta nell'array messages
-                this.contacts[this.active].messages.push(botMessage);
-
+            const newMessage = {
+                date: '27/04/2022 13:57:00',
+                message: this.textMyMessage,
+                status: 'sent'
 
             }
 
-            /* searchContacts(){
+            //imposto una condizione nel caso l'input sia una stringa vuota non deve essere pushato all'enter click
 
-                console.log('click')
+            if (this.textMyMessage != '') {
 
-                this.contacts.forEach((contact) => {
+                //pusho l'oggetto con il nuovo messaggio nell'array messages
+                this.contacts[this.active].messages.push(newMessage);
 
-                    if(contact.name.toLowerCase().includes(this.searchFilter.toLowerCase())){
-                        contact.visible = true;
-                    } else {
-                        contact.visible = false;
-                    }
+                //faccio il clear dell'input
+                this.textMyMessage = ''
 
-                })
-            } */
+            }
 
+            /* this.receivedBotMessage() */
+
+            //imposto il metodo affinchè mi restituisca la risposta della funzione richiamata dopo che sia passato 1 sec
+            setTimeout(this.receivedBotMessage, 1000);
+
+        },
+
+        //funzione che mi restituisce una risposta automatica settata su 'ok'
+        receivedBotMessage() {
+
+            const botMessage = {
+                date: '27/04/2022 13:57:00',
+                message: 'ok',
+                status: 'received'
+
+            }
+
+            //pusho l'oggetto con il messaggio automatico di risposta nell'array messages
+            this.contacts[this.active].messages.push(botMessage);
+
+
+        },
+
+
+        deleteMessage(index) {
+            this.contacts[this.active].messages.splice(index, 1)
         }
-      
+
+
+
+        /* searchContacts(){
+
+            console.log('click')
+
+            this.contacts.forEach((contact) => {
+
+                if(contact.name.toLowerCase().includes(this.searchFilter.toLowerCase())){
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+
+            })
+        } */
+
     }
-)
+
+})

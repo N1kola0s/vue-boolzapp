@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +11,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- style.css -->
-    <link rel="stylesheet" href="./assets/css/style.css"
-
-    <!-- link fontAwesome css-->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+    <link rel="stylesheet" href="./assets/css/style.css" <!-- link fontAwesome css-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==' crossorigin='anonymous' referrerpolicy='no-referrer'
+    />
 
 
 </head>
+
 <body>
 
     <div id="app">
@@ -25,7 +26,7 @@
 
             <div class="container">
                 <div class="row ">
-    
+
                     <div class="left_side col-4">
                         <div class="top_bar d-flex align-items-center justify-content-between">
                             <div class="d-flex flex-columns align-items-center">
@@ -34,16 +35,16 @@
                                 </div>
                                 <h6>Sofia</h6>
                             </div>
-    
+
                             <div class="el_icons">
                                 <i class="fa-solid fa-circle-notch"></i>
                                 <i class="fa-solid fa-message"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
-                            
+
                         </div>
                         <!-- /.top_bar -->
-    
+
                         <div class="notification box d-flex align-items-center">
                             <div class="d-flex flex-columns align-items-center px-3">
                                 <div class="icon d-flex justify-content-center align-items-center px-2">
@@ -54,20 +55,20 @@
                                     <p><u>Attiva notifiche desktop</u></p>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <!-- /.notification -->
-    
+
                         <div class="search box m-2 d-flex px-3">
                             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <input v-model="searchFilter" class="w-100 px-3" type="text" placeholder="Cerca o inizia una nuova chat" > 
+                            <input v-model="searchFilter" class="w-100 px-3" type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <!-- /.search -->
-    
-                        <section class="contacts">
-                            <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)" :class="index === active ? 'active' : ''" v-if="contact.name.toLowerCase().includes(searchFilter.toLowerCase())" >
 
-                                
+                        <section class="contacts">
+                            <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)" :class="index === active ? 'active' : ''" v-if="contact.name.toLowerCase().includes(searchFilter.toLowerCase())">
+
+
 
                                 <div class="d-flex flex-columns">
                                     <div class="contacts icon">
@@ -76,18 +77,18 @@
                                     <!-- /.contacts icon -->
                                     <div class="text_info mx-2">
                                         <h6>{{contact.name}}</h6>
-                                        <p> 
-                                            <!-- {{contacts[index].messages[contacts[index].messages.length - 1].message}} --> 
+                                        <p v-if="contacts[index].messages.length >= 1">
+                                            <!-- {{contacts[index].messages[contacts[index].messages.length - 1].message}} -->
 
                                             {{contact.messages[contact.messages.length-1].message}}
-                                        
+
                                         </p>
                                     </div>
                                     <!-- /.text_info -->
-    
+
                                 </div>
-                               
-                                <div class="time">
+
+                                <div class="time" v-if="contacts[index].messages.length >= 1">
 
                                     <!-- {{contact.messages.at(-1).date.slice(10,16)}} -->
 
@@ -96,26 +97,26 @@
                                     {{contact.messages[contact.messages.length -1].date.slice(10,16)}}
 
                                     <!-- 12:00 -->
-                                    
+
                                 </div>
                                 <!-- /.time -->
-                                
+
                             </div>
-    
+
                         </section>
                         <!-- /.contacts -->
-    
-                        
-    
+
+
+
                     </div>
                     <!-- /.col-4 -->
-    
+
                     <div class="right_side col-8">
-    
+
                         <div class="chat">
-    
+
                             <div class="top_bar d-flex align-items-center justify-content-between">
-    
+
                                 <div class="d-flex flex-columns">
                                     <div class="user_icon">
                                         <img :src="'./assets/img/avatar' + contacts[active].avatar + '.jpg'" alt="user_name">
@@ -127,30 +128,69 @@
                                     </div>
                                     <!-- /.text_info -->
                                 </div>
-        
+
                                 <div class="el_icons">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                     <i class="fa-solid fa-paperclip"></i>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </div>
                                 <!-- /.el_icons -->
-        
+
                             </div>
                             <!-- /.top_bar -->
-        
-                            <div class="message_box p-5" >
+
+                            <div class="message_box p-5">
 
                                 <div class="message w-100 d-flex flex-column" v-for="(contact,index) in contacts[active].messages">
-                                    
-                                    
+
+
                                     <div class="text_message col-5" :class="contact.status == 'sent' ? 'sent_message' : 'received_message'">
                                         {{contact.message}}
 
+                                        <div class="dropdown">
+
+                                            <i class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
+
+                                            <ul class="dropdown-menu drop_box" aria-labelledby="dropdownMenuButton1">
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                    Message info
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="dropdown-item" href="#" @click="deleteMessage(index)">
+                                                        Delete message
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+
                                         <div class="message_time">
                                             {{contact.date.slice(10,16)}}
-    
+
                                         </div>
-                                        <!-- /.message:time -->
+                                        <!-- /.message_time -->
+
+                                        <!--    <div class="delete_message">
+
+                                            <i @click="dropOn(index)" class="fa-solid fa-chevron-down delete_icon"></i>
+
+                                            <div class="dropdown" v-if="messageDrop.status === true ? 'd-block' : ''">
+                                                <div class="pb-2 text-start">
+                                                    Message info
+                                                </div>
+
+                                                <div class="">
+                                                    Delete message
+                                                </div>
+                                            </div>
+
+
+                                        </div> -->
+
+
 
                                     </div>
 
@@ -159,42 +199,46 @@
 
                             </div>
                             <!-- /.message_box -->
-        
+
                             <div class="bottom_bar d-flex align-items-center justify-content-between">
-        
+
                                 <div class="el_icons">
                                     <i class="fa-regular fa-face-smile"></i>
                                 </div>
                                 <!-- /.el_icons -->
-    
+
                                 <input v-model="textMyMessage" @keyup.enter="sendMyMessage" class="w-100 text-black" type="text" placeholder="Scrivi un messaggio">
-    
+
                                 <div class="el_icons">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
                                 <!-- el_icons -->
-    
+
                             </div>
                             <!-- /.bottom_bar -->
-    
+
                         </div>
                         <!-- /.chat -->
-                    
+
                     </div>
                     <!-- /.col-8 -->
                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container -->
-    
+
         </main>
         <!-- /#site_main -->
 
     </div>
 
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script>
     <script src="./assets/js/app.js"></script>
-    
+
+
 </body>
+
 </html>
