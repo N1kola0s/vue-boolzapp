@@ -15,6 +15,10 @@ un “ok” come risposta, che apparirà dopo 1 secondo.
 Milestone 4
 ● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
+Milestone 5 - opzionale
+● Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
+
 */
 
 const app = new Vue (
@@ -190,6 +194,8 @@ const app = new Vue (
         },
         
         methods: {
+
+            //imposto una funzione con parametro index che prenda l'elemento nella posizione active corrispondente e ne attribuisca il valore come index
             chat_selected(index){
                 
                 this.active = index;
@@ -237,18 +243,28 @@ const app = new Vue (
 
                 }
 
-
+                //pusho l'oggetto con il messaggio automatico di risposta nell'array messages
                 this.contacts[this.active].messages.push(botMessage);
 
 
-            },
+            }
 
+            /* searchContacts(){
 
+                console.log('click')
 
-            
+                this.contacts.forEach((contact) => {
+
+                    if(contact.name.toLowerCase().includes(this.searchFilter.toLowerCase())){
+                        contact.visible = true;
+                    } else {
+                        contact.visible = false;
+                    }
+
+                })
+            } */
+
         }
-
-
-        
+      
     }
 )
