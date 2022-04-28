@@ -239,27 +239,33 @@ const app = new Vue({
 
         },
 
-
+        //imposto una funzione per la cancellazione deli messaggi
         deleteMessage(index) {
             this.contacts[this.active].messages.splice(index, 1)
-        }
+        },
 
+        //imposto una funzione per la ricerca degli utenti
+        searchContacts() {
 
+            /*  console.log('click') */
 
-        /* searchContacts(){
+            //imposto un ciclo nei contatti
+            this.contacts.forEach(contact => {
 
-            console.log('click')
+                //imposto una condizione che controlli se i contatti corrispondano alla ricerca effettuata nell'input
 
-            this.contacts.forEach((contact) => {
+                if (contact.name.toLowerCase().includes(this.searchFilter.toLowerCase())) {
 
-                if(contact.name.toLowerCase().includes(this.searchFilter.toLowerCase())){
+                    //se la condizione si verifica
                     contact.visible = true;
                 } else {
+
+                    //se la condizione non si verifica
                     contact.visible = false;
                 }
 
             })
-        } */
+        }
 
     }
 
