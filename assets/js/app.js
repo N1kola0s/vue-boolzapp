@@ -213,9 +213,13 @@ const app = new Vue({
 
             }
 
+            //bonus: imposto condizione per evitare che l'utente possa inviare un messaggio vuoto o composto solamente da spazi;
+
             //imposto una condizione nel caso l'input sia una stringa vuota non deve essere pushato all'enter click
 
-            if (this.textMyMessage != '') {
+            let noEmptyMessage = this.textMyMessage.trimStart() /* <-- trimStart() metodo che elimina spazi iniziali in una stringa */
+
+            if (noEmptyMessage != '') {
 
                 //pusho l'oggetto con il nuovo messaggio nell'array messages
                 this.contacts[this.active].messages.push(newMessage);
@@ -223,12 +227,12 @@ const app = new Vue({
                 //faccio il clear dell'input
                 this.textMyMessage = ''
 
+                /* this.receivedBotMessage() */
+
+                //imposto il metodo affinchè mi restituisca la risposta della funzione richiamata dopo che sia passato 1 sec
+                setTimeout(this.receivedBotMessage, 1000);
+
             }
-
-            /* this.receivedBotMessage() */
-
-            //imposto il metodo affinchè mi restituisca la risposta della funzione richiamata dopo che sia passato 1 sec
-            setTimeout(this.receivedBotMessage, 1000);
 
         },
 
