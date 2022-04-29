@@ -27,6 +27,11 @@ const app = new Vue({
         active: 0,
         textMyMessage: '',
         searchFilter: '',
+        activeMessage: {
+            counter: null,
+            show: false,
+        },
+
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -190,6 +195,10 @@ const app = new Vue({
 
             this.active = index;
             console.log(index);
+
+            //imposto condizioni per evitare bug nei menu a tendina per la rimozione dei messaggi alla selezione delle chat (milestone 5)
+            this.activeMessage.counter = false;
+            this.activeMessage.show = false;
         },
 
         sendMyMessage() {
@@ -239,9 +248,54 @@ const app = new Vue({
 
         },
 
-        //imposto una funzione per la cancellazione deli messaggi
+
+        dropOn(index) {
+
+            //verifico il click e l'index in console
+
+            console.log('click', index);
+
+            //inserisco il valore dell'index nella variabile creata nell'oggetto
+            this.activeMessage.counter = index;
+
+            //verifico in console
+            console.log(this.activeMessage.counter)
+
+
+            //imposto una condizione che alterni i valori booleani nella mia variabile al click
+            if (this.activeMessage.show == false) {
+
+                this.activeMessage.show = true;
+
+            } else {
+
+                this.activeMessage.show = false;
+            }
+
+            /*  if (this.activeMessage.counter === index) {
+
+                 this.activeMessage.counter = false;
+
+                 this.activeMessage.show = false;
+
+
+                 return
+
+             }
+             this.activeMessage.counter = index;
+             this.activeMessage.show = true; */
+
+            //verifico il valore booleano restituito in console
+            console.log(this.activeMessage.show)
+
+        },
+
+
+        //imposto una funzione per la cancellazione dei messaggi
         deleteMessage(index) {
+
             this.contacts[this.active].messages.splice(index, 1)
+
         },
 
         //imposto una funzione per la ricerca degli utenti
@@ -252,15 +306,15 @@ const app = new Vue({
             //imposto un ciclo nei contatti
             this.contacts.forEach(contact => {
 
-                //imposto una condizione che controlli se i contatti corrispondano alla ricerca effettuata nell'input
+                //imposto una condizione che controlli se i nomi dei contatti corrispondano alla ricerca effettuata nell'input
 
                 if (contact.name.toLowerCase().includes(this.searchFilter.toLowerCase())) {
 
-                    //se la condizione si verifica
+                    //se la condizione si verifica setto un valore su visible 
                     contact.visible = true;
                 } else {
 
-                    //se la condizione non si verifica
+                    //se la condizione non si verifica setto un altro valore boleano su visible
                     contact.visible = false;
                 }
 

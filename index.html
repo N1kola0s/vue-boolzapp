@@ -66,7 +66,7 @@
                         <!-- /.search -->
 
                         <section class="contacts">
-                            <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)" :class="index === active ? 'active' : ''" v-if="contact.visible">
+                            <div v-for="(contact, index) in contacts" class="box d-flex flex-columns align-items-start px-3 justify-content-between py-3" @click="chat_selected(index)" :class="index === active ? 'active' : ''" v-show="contact.visible">
 
                                 <!-- v-if="contact.name.toLowerCase().includes(searchFilter.toLowerCase())" -->
 
@@ -79,7 +79,7 @@
                                     <!-- /.contacts icon -->
                                     <div class="text_info mx-2">
                                         <h6>{{contact.name}}</h6>
-                                        <p v-if="contacts[index].messages.length >= 1">
+                                        <p v-if="contacts[index].messages.length > 0">
                                             <!-- {{contacts[index].messages[contacts[index].messages.length - 1].message}} -->
 
                                             {{contact.messages[contact.messages.length-1].message}}
@@ -90,7 +90,7 @@
 
                                 </div>
 
-                                <div class="time" v-if="contacts[index].messages.length >= 1">
+                                <div class="time" v-if="contacts[index].messages.length > 0">
 
                                     <!-- {{contact.messages.at(-1).date.slice(10,16)}} -->
 
@@ -149,7 +149,7 @@
                                     <div class="text_message col-5" :class="contact.status == 'sent' ? 'sent_message' : 'received_message'">
                                         {{contact.message}}
 
-                                        <div class="dropdown">
+                                        <!-- <div class="dropdown">
 
                                             <i class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
 
@@ -167,7 +167,7 @@
                                                 </li>
                                             </ul>
 
-                                        </div>
+                                        </div> -->
 
                                         <div class="message_time">
                                             {{contact.date.slice(10,16)}}
@@ -175,22 +175,25 @@
                                         </div>
                                         <!-- /.message_time -->
 
-                                        <!--    <div class="delete_message">
+                                        <div class="delete_box">
 
                                             <i @click="dropOn(index)" class="fa-solid fa-chevron-down delete_icon"></i>
 
-                                            <div class="dropdown" v-if="messageDrop.status === true ? 'd-block' : ''">
+
+                                            <div class="dropbox" v-show="activeMessage.show  && activeMessage.counter == index">
+
                                                 <div class="pb-2 text-start">
                                                     Message info
                                                 </div>
 
-                                                <div class="">
+                                                <div @click="deleteMessage(index)">
                                                     Delete message
                                                 </div>
                                             </div>
 
 
-                                        </div> -->
+                                        </div>
+                                        <!-- /.delete_box -->
 
 
 
