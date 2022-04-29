@@ -294,6 +294,8 @@ const app = new Vue({
         //imposto una funzione per la cancellazione dei messaggi
         deleteMessage(index) {
 
+            this.activeMessage.show = false;
+
             this.contacts[this.active].messages.splice(index, 1)
 
         },
