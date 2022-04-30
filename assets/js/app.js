@@ -24,6 +24,9 @@ SUPER-BONUS:
 ● evitare che l'utente possa inviare un messaggio vuoto o composto solamente da spazi
 ● A) cambiare icona in basso a destra (a fianco all'input per scrivere un nuovo messaggio) finché l'utente sta scrivendo: di default si visualizza l'icona del microfono, quando l'input non è vuoto si visualizza l'icona dell'aeroplano. Quando il messaggio è stato inviato e l'input si svuota, si torna a visualizzare il microfono. B) inviare quindi il messaggio anche cliccando sull'icona dell'aeroplano
 ● predisporre una lista di frasi e/o citazioni da utilizzare al posto della risposta "ok:" quando il pc risponde, anziché scrivere "ok", scegliere una frase random dalla lista e utilizzarla come testo del messaggio di risposta del pc
+● visualizzare nella lista dei contatti l'ultimo messaggio inviato/ricevuto da ciascun contatto
+● inserire l'orario corretto nei messaggi (v. note day.js)
+
 
 */
 
@@ -209,11 +212,17 @@ const app = new Vue({
 
         sendMyMessage() {
             console.log('enter click')
+                /* console.log(dayjs()) */
+
+            //bonus ora corrente, messaggi utente
+
+            const newDate = dayjs().format('DD/MM/YYYY' + ' ' + 'HH:mm:ss');
+            console.log(newDate)
 
             //dichiaro una variabile che inizializzo con il nuovo oggetto
 
             const newMessage = {
-                date: '27/04/2022 13:57:00',
+                date: newDate,
                 message: this.textMyMessage,
                 status: 'sent'
 
@@ -245,23 +254,27 @@ const app = new Vue({
         //funzione che mi restituisce una risposta automatica settata su 'ok'
         receivedBotMessage() {
 
+            //bonus oa corrente per i messaggi automatici
+
+            const newBotDate = dayjs().format('DD/MM/YYYY' + ' ' + 'HH:mm:ss');
+
             const botMessage = [{
-                    date: '27/04/2022 13:57:00',
+                    date: newBotDate,
                     message: 'ok',
                     status: 'received'
                 },
                 {
-                    date: '27/04/2022 13:57:00',
+                    date: newBotDate,
                     message: 'come posso esserti utile?',
                     status: 'received'
                 },
                 {
-                    date: '27/04/2022 13:57:00',
+                    date: newBotDate,
                     message: 'vuoi effettuare una ricerca?',
                     status: 'received'
                 },
                 {
-                    date: '27/04/2022 13:57:00',
+                    date: newBotDate,
                     message: 'ciao',
                     status: 'received'
                 }
