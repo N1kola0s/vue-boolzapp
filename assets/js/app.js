@@ -19,6 +19,12 @@ Milestone 5 - opzionale
 ● Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 ● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
+
+SUPER-BONUS:
+● evitare che l'utente possa inviare un messaggio vuoto o composto solamente da spazi
+● A) cambiare icona in basso a destra (a fianco all'input per scrivere un nuovo messaggio) finché l'utente sta scrivendo: di default si visualizza l'icona del microfono, quando l'input non è vuoto si visualizza l'icona dell'aeroplano. Quando il messaggio è stato inviato e l'input si svuota, si torna a visualizzare il microfono. B) inviare quindi il messaggio anche cliccando sull'icona dell'aeroplano
+● predisporre una lista di frasi e/o citazioni da utilizzare al posto della risposta "ok:" quando il pc risponde, anziché scrivere "ok", scegliere una frase random dalla lista e utilizzarla come testo del messaggio di risposta del pc
+
 */
 
 const app = new Vue({
@@ -239,16 +245,39 @@ const app = new Vue({
         //funzione che mi restituisce una risposta automatica settata su 'ok'
         receivedBotMessage() {
 
-            const botMessage = {
-                date: '27/04/2022 13:57:00',
-                message: 'ok',
-                status: 'received'
+            const botMessage = [{
+                    date: '27/04/2022 13:57:00',
+                    message: 'ok',
+                    status: 'received'
+                },
+                {
+                    date: '27/04/2022 13:57:00',
+                    message: 'come posso esserti utile?',
+                    status: 'received'
+                },
+                {
+                    date: '27/04/2022 13:57:00',
+                    message: 'vuoi effettuare una ricerca?',
+                    status: 'received'
+                },
+                {
+                    date: '27/04/2022 13:57:00',
+                    message: 'ciao',
+                    status: 'received'
+                }
 
-            }
+            ]
+
+            //bonus
+
+            //imposto una variabile che ha come valore un oggetto di un array preso in modo randomico
+            let mexBot = botMessage[Math.floor(Math.random() * botMessage.length)];
+            /* console.log(mexBot) */
 
             //pusho l'oggetto con il messaggio automatico di risposta nell'array messages
-            this.contacts[this.active].messages.push(botMessage);
+            this.contacts[this.active].messages.push(mexBot);
 
+            /* this.contacts[this.active].messages.push(botMessage); */
 
         },
 

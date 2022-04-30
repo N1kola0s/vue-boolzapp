@@ -215,7 +215,13 @@
                                 <input v-model="textMyMessage" @keyup.enter="sendMyMessage" class="w-100 text-black" type="text" placeholder="Scrivi un messaggio">
 
                                 <div class="el_icons">
-                                    <i class="fa-solid fa-microphone"></i>
+
+                                    <!-- <i class="fa-solid fa-microphone"></i> -->
+
+                                    <!-- <i class="fa-solid fa-paper-plane"></i> -->
+
+                                    <i :class="textMyMessage !== '' ? 'fa-solid fa-paper-plane':'fa-solid fa-microphone' " @click="sendMyMessage"></i>
+
                                 </div>
                                 <!-- el_icons -->
 
@@ -227,8 +233,10 @@
 
                     </div>
                     <!-- /.col-8 -->
+
                 </div>
                 <!-- /.row -->
+
             </div>
             <!-- /.container -->
 
