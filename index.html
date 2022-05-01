@@ -126,7 +126,14 @@
                                     <!-- /.user_icon -->
                                     <div class="text_info mx-2">
                                         <h6>{{contacts[active].name}}</h6>
-                                        <p>Ultimo accesso oggi alle 12:00</p>
+                                        <!-- Bonus-  imposto condizioni affinchè in base a dei valori booleani inizializzati in data lato vuejs mi reindirizzi il contenuto del paragrafo in modo dinamico -->
+                                        <p v-if="isWriting.status">
+                                            {{isWriting.txt}}
+                                        </p>
+
+                                        <p v-else-if="isOnline.status">{{isOnline.online}}</p>
+
+                                        <p v-else>Ultimo accesso oggi alle {{contacts[active].messages[contacts[active].messages.length - 1].date.slice(10,16)}}</p>
                                     </div>
                                     <!-- /.text_info -->
                                 </div>

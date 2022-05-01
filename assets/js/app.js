@@ -26,6 +26,7 @@ SUPER-BONUS:
 ● predisporre una lista di frasi e/o citazioni da utilizzare al posto della risposta "ok:" quando il pc risponde, anziché scrivere "ok", scegliere una frase random dalla lista e utilizzarla come testo del messaggio di risposta del pc
 ● visualizzare nella lista dei contatti l'ultimo messaggio inviato/ricevuto da ciascun contatto
 ● inserire l'orario corretto nei messaggi (v. note day.js)
+● sotto al nome del contatto nella parte in alto a destra, cambiare l'indicazione dello stato: visualizzare il testo "sta scrivendo..." nel timeout in cui il pc risponde, poi mantenere la scritta "online" per un paio di secondi e infine visualizzare "ultimo accesso alle xx:yy" con l'orario corretto
 
 
 */
@@ -36,6 +37,14 @@ const app = new Vue({
         active: 0,
         textMyMessage: '',
         searchFilter: '',
+        isOnline: {
+            status: false,
+            online: 'Online',
+        },
+        isWriting: {
+            status: false,
+            txt: 'Sta scrivendo...',
+        },
         activeMessage: {
             counter: null,
             show: false,
@@ -244,12 +253,24 @@ const app = new Vue({
 
                 /* this.receivedBotMessage() */
 
+                //bonus- cambio il valore booleano in modo reindirizzi la stringa "sta scrivendo..." prima di ricevere una risposta automatica al messaggio inviato
+                this.isWriting.status = true;
+
                 //imposto il metodo affinchè mi restituisca la risposta della funzione richiamata dopo che sia passato 1 sec
-                setTimeout(this.receivedBotMessage, 1000);
+                setTimeout(this.receivedBotMessage, 2000);
+
+                //cambio dopo due secondi dall'invio del messaggio automatico ricevuto il valore booleano in modo da reindirizzare lo stato del pc nuovamente sull'ultimo messaggio inviato con l'orario xx:yy
+                setTimeout(() => {
+
+                    this.isOnline.status = false;
+
+                }, 4000)
 
             }
 
         },
+
+
 
         //funzione che mi restituisce una risposta automatica settata su 'ok'
         receivedBotMessage() {
@@ -292,8 +313,11 @@ const app = new Vue({
 
             /* this.contacts[this.active].messages.push(botMessage); */
 
-        },
+            //cambio il valore booleano delle variabili in corrispondenza dello stato dell'utente e del messaggio di digitazione del messaggio automatico in modo che il primo venga reindirizzato su "online" e il secondo non venga reindirizzato
 
+            this.isOnline.status = true;
+            this.isWriting.status = false;
+        },
 
         dropOn(index) {
 
